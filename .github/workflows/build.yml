@@ -52,6 +52,9 @@ jobs:
     - name: JDK 17
       if: matrix.jdk == '17'
       run: mvn -B clean compile -Dmaven.gitcommitid.skip=true
+    - name: JDK 21
+      if: matrix.jdk == '21'
+      run: mvn -B clean compile -Dmaven.gitcommitid.skip=true
     - name: Upload coverage to Codecov
       if: matrix.jdk == '8'
       uses: codecov/codecov-action@v1
