@@ -48,10 +48,10 @@ jobs:
       run: mvn -B clean package -P travis jacoco:report -Dmaven.gitcommitid.skip=true
     - name: JDK 11 
       if: matrix.jdk == '11'
-      run: mvn -B clean compile -Dmaven.gitcommitid.skip=true
+      run: mvn -B clean compile test -Dmaven.gitcommitid.skip=true
     - name: JDK 17
       if: matrix.jdk == '17'
-      run: mvn -B clean compile -Dmaven.gitcommitid.skip=true
+      run: mvn -B clean compile test -Dmaven.gitcommitid.skip=true
     - name: JDK 21
       if: matrix.jdk == '21'
       run: mvn -B clean compile test -Dmaven.gitcommitid.skip=true
